@@ -70,9 +70,14 @@ void Mdplibrary::Create_world()
 	for(int i=0;i<3;i++)
 		for(int j=0;j<4;j++)
 		cout<<arr[i][j];
+number_mapper("Reward",.5,2,3);
+}
+void Mdplibrary::value_iteration(int row,int col)
+{
+
 }
 void Mdplibrary::caller(){
 
-String_mapper("this"," rojo",2,3);
+//number_mapper("Reward",.5,2,3);
 cout<<"******** :"<<mnumber[11]["Reward"]<<endl;
 }

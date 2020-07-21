@@ -23,6 +23,7 @@ public:
 	void Create_world();
 	int coordiantToIndex(int row, int col);
 	void cell_intializer();
+	void value_iteration(int row,int col);
 	void caller();
 	
 };
