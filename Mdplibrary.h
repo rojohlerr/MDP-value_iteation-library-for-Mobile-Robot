@@ -15,6 +15,7 @@ private:
 	float map_Numvalue;
 	int row,col;
 	float value_matrix[3][4];
+	string policy_matrix[3][4]
 public:
 	Mdplibrary();
 	//~Mdplibrary();
