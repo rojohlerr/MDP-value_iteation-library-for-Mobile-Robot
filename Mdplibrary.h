@@ -14,6 +14,7 @@ private:
 	string map_Strvalue;
 	float map_Numvalue;
 	int row,col;
+	float value_matrix[3][4];
 public:
 	Mdplibrary();
 	//~Mdplibrary();
@@ -24,6 +25,8 @@ public:
 	int coordiantToIndex(int row, int col);
 	void cell_intializer();
 	void value_iteration(int row,int col);
+	bool is_terminal_block(int row, int col);
+	bool endOf_iteration();
 	void caller();
 	
 };
