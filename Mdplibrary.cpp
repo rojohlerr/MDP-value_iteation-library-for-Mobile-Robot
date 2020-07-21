@@ -16,7 +16,8 @@ Mdplibrary::Mdplibrary()
 }
 void Mdplibrary::cell_intializer(){
 	int idx_no;
-
+    value_matrix[3][4]={0.0};
+    policy_matrix[3][4]={""};
 	for(int i=0;i<3;i++)
 		for(int j=0;j<4;j++)
 		{
@@ -90,13 +91,27 @@ bool Mdplibrary::endOf_iteration() //check in the iteraion is meet the epsilon
 }
 void Mdplibrary::value_toMatrix() // calculated value to new matrix value 
 {
-
-
+    int idx_no;
+    
+	for(int i=0;i<3;i++)
+		for(int j=0;j<4;j++)
+         {
+         	idx_no=coordiantToIndex(i,j);
+         	value_matrix[i][j]=mnumber[idx_no]["value"];
+         }
+  // mnumber
 }
 void Mdplibrary::policy_toMatrix() // calculated policy to new matrix value 
 {
 
-
+int idx_no;
+    
+	for(int i=0;i<3;i++)
+		for(int j=0;j<4;j++)
+         {
+         	idx_no=coordiantToIndex(i,j);
+         	policy_matrix[i][j]=mstring[idx_no]["policy"]; //mnumber
+         }
 }
 void Mdplibrary::value_iteration(int row,int col)
 {
