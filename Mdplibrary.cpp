@@ -54,7 +54,7 @@ void Mdplibrary::number_mapper(string index,float value,int row, int col)
     //	cout<<"print me"<<endl;
 }
 
-int  Mdplibrary::coordiantToIndex(int row,int col)
+int  Mdplibrary::coordiantToIndex(int row,int col) // change to the matrix(row, col ) to index
 {  int index=0;
 	if(col%2==0)
 		index=abs((col%4)*3)+abs(row-2);
@@ -63,7 +63,7 @@ int  Mdplibrary::coordiantToIndex(int row,int col)
 return index;
 }
 
-void Mdplibrary::Create_world()
+void Mdplibrary::Create_world() // create the gridworld in form of multi dimentional array
 {
 	float arr[3][4]={0.0};
 	
@@ -72,12 +72,39 @@ void Mdplibrary::Create_world()
 		cout<<arr[i][j];
 number_mapper("Reward",.5,2,3);
 }
-void Mdplibrary::value_iteration(int row,int col)
+bool Mdplibrary::is_terminal_block(int row, int col) // check if it is termina or block state
+
+{   int idx_no;
+	bool rtn=false;
+	idx_no=coordiantToIndex(row,col);
+	if(mstring[idx_no]["Is_terminal"]=="YES" || mstring[idx_no]["Is_block"]=="YES")
+		rtn=true;
+
+		//cout<<"^^^^^^^^^^^^^^^this is ^^^^^^^^^^^^^^^"<<endl;
+	return rtn;
+	 
+}
+bool Mdplibrary::endOf_iteration() //check in the iteraion is meet the epsilon
 {
 
+}
+void Mdplibrary::value_toMatrix() // calculated value to new matrix value 
+{
+
+
+}
+void Mdplibrary::policy_toMatrix() // calculated policy to new matrix value 
+{
+
+
+}
+void Mdplibrary::value_iteration(int row,int col)
+{
+ 
 }
 void Mdplibrary::caller(){
 
 //number_mapper("Reward",.5,2,3);
+is_terminal_block(1,2);
 cout<<"******** :"<<mnumber[11]["Reward"]<<endl;
 }
