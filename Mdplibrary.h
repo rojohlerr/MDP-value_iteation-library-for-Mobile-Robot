@@ -15,7 +15,7 @@ private:
 	float map_Numvalue;
 	int row,col;
 	float value_matrix[3][4];
-	string policy_matrix[3][4]
+	string policy_matrix[3][4];
 public:
 	Mdplibrary();
 	//~Mdplibrary();
@@ -28,7 +28,10 @@ public:
 	void value_iteration(int row,int col);
 	bool is_terminal_block(int row, int col);
 	bool endOf_iteration();
+	void policy_toMatrix() ;
+	void value_toMatrix();
 	void caller();
+
 	
 };
 
