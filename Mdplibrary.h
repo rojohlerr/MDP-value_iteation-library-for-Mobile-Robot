@@ -30,6 +30,9 @@ public:
 	bool endOf_iteration();
 	void policy_toMatrix() ;
 	void value_toMatrix();
+	void policy_update(int row, int col, string policy);
+	void value_update(int row, int col, float value);
+	float direction_extracter(int row,int col,string direction);
 	void caller();
 
 	
