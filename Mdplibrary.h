@@ -3,6 +3,7 @@
 #define Mdp_libray_policy
 
 #include <iostream>
+#include <algorithm>
 #include <map>
 #include <string.h>
 using namespace std;
@@ -10,12 +11,15 @@ class Mdplibrary
 {
 
 private:
+	float epsilon;
+	float discount_factor;
 	string map_index;
 	string map_Strvalue;
 	float map_Numvalue;
 	int row,col;
 	float value_matrix[3][4];
 	string policy_matrix[3][4];
+	float temp_value [3][4];
 public:
 	Mdplibrary();
 	//~Mdplibrary();
@@ -25,11 +29,12 @@ public:
 	void Create_world();
 	int coordiantToIndex(int row, int col);
 	void cell_intializer();
-	void value_iteration(int row,int col);
+	void value_iteration();
 	bool is_terminal_block(int row, int col);
 	bool endOf_iteration();
 	void policy_toMatrix() ;
 	void value_toMatrix();
+	bool comp_diff_episilon();
 	void policy_update(int row, int col, string policy);
 	void value_update(int row, int col, float value);
 	float direction_extracter(int row,int col,string direction);
