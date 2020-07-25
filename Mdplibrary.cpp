@@ -221,6 +221,7 @@ void Mdplibrary::value_iteration()
             else{
              motion_valut[0]=0.8*direction_extracter(i,j,"north") + 0.1*direction_extracter(i,j,"left") + 0.1*direction_extracter(i,j,"right");
              max=motion_valut[0];
+             key=0;
              motion_valut[1]=0.8*direction_extracter(i,j,"south") + 0.1*direction_extracter(i,j,"left") + 0.1*direction_extracter(i,j,"right");
              motion_valut[2]=0.8*direction_extracter(i,j,"right") + 0.1*direction_extracter(i,j,"north") + 0.1*direction_extracter(i,j,"south");
              motion_valut[3]=0.8*direction_extracter(i,j,"left") + 0.1*direction_extracter(i,j,"north") + 0.1*direction_extracter(i,j,"south");
@@ -228,7 +229,9 @@ void Mdplibrary::value_iteration()
            for (int k= 0; k<4; k++) 
              {if (motion_valut[k] > max) 
                 { max = motion_valut[k]; 
+
                  key=k;
+
              }}
             
          mnumber[idx_no]["Value"]= max*discount_factor+ mnumber[idx_no]["Reward"];

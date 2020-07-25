@@ -1,4 +1,9 @@
+/*************************
+This is is a c++ libray writing for the Esp32:
+this is is the value iteration algorithm  implementation of MDP
 
+
+***************************/
 #ifndef Mdp_libray_policy
 #define Mdp_libray_policy
 
